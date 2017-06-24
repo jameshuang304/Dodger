@@ -1,5 +1,5 @@
 package com.oopfinal.main;
-import javax.swing.plaf.nimbus.State;
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -34,6 +34,10 @@ public class Game extends Canvas implements Runnable {
         menu = new Menu(this, handler, hud);
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(menu);
+
+        AudioPlayer.load();
+
+        AudioPlayer.getMusic("music").loop();
 
         new Window(WIDTH,HEIGHT,"Let's Build a Game!", this);
 
@@ -117,7 +121,7 @@ public class Game extends Canvas implements Runnable {
     private void render(){
         BufferStrategy bs = this.getBufferStrategy();
         if(bs == null){
-            this.createBufferStrategy(3);
+            this.createBufferStrategy(2);
             return;
         }
 

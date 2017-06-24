@@ -31,10 +31,13 @@ public class Menu extends MouseAdapter{
                 handler.addObject(new Player(Game.WIDTH/2-32, Game.HEIGHT/2-32, ID.Player, handler));
                 handler.clearEnemys();
                 handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.BasicEnemy, handler));
+
+                AudioPlayer.getSound("menu_sound").play();
             }
             //help button
             if (mouseOver(mx, my, 210, 250, 200, 64)) {
                 game.gameState = Game.STATE.Help;
+                AudioPlayer.getSound("menu_sound").play();
             }
             //quit button
             if (mouseOver(mx, my, 210, 350, 200, 64)) {
@@ -46,6 +49,7 @@ public class Menu extends MouseAdapter{
         if (game.gameState == Game.STATE.Help) {
             if (mouseOver(mx, my, 210, 350, 200, 64)) {
                 game.gameState = Game.STATE.Menu;
+                AudioPlayer.getSound("menu_sound").play();
                 return;
             }
         }
@@ -59,6 +63,7 @@ public class Menu extends MouseAdapter{
                 handler.addObject(new Player(Game.WIDTH/2-32, Game.HEIGHT/2-32, ID.Player, handler));
                 handler.clearEnemys();
                 handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.BasicEnemy, handler));
+                AudioPlayer.getSound("menu_sound").play();
                 return;
             }
         }
