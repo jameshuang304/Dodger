@@ -3,6 +3,6 @@ package com.oopfinal.main;
 public enum ID
 {
 	Player(),
-	// Player2(),
+	PlayerTrail(),
 	BasicEnemy(), FastEnemy(), SmartEnemy(), HardEnemy(), EnemyBoss(), MenuParticle(), Trail();
 }

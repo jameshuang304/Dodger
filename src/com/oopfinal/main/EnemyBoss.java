@@ -13,15 +13,17 @@ public class EnemyBoss extends GameObject
 
 	private int timer = 80;
 	private int timer2 = 50;
+	private Random gen;
 
 	public EnemyBoss(int x, int y, ID id, Handler handler)
 	{
 		super(x, y, id);
-
+		gen = new Random();
 		this.handler = handler;
 
 		velX = 0;
 		velY = 2;
+		
 	}
 
 	public Rectangle getBounds()
@@ -60,12 +62,15 @@ public class EnemyBoss extends GameObject
 
 		if (x <= 0 || x >= Game.WIDTH - 96)
 			velX *= -1;
+		
 
 	}
 
 	public void render(Graphics g)
 	{
-		g.setColor(Color.red);
+//		g.setColor(Color.red);
+		Color color = new Color(gen.nextInt(256), gen.nextInt(256), gen.nextInt(256));
+		g.setColor(color);
 		g.fillRect((int) x, (int) y, 96, 96);
 	}
 }

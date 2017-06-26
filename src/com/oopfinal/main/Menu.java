@@ -60,7 +60,7 @@ public class Menu extends MouseAdapter
 				handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.BasicEnemy,
 						handler));
 
-				game.diff = 0;
+				game.difficulty = 0;
 
 				AudioPlayer.getSound("menu_sound").play();
 			}
@@ -73,7 +73,7 @@ public class Menu extends MouseAdapter
 				handler.addObject(
 						new HardEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.BasicEnemy, handler));
 
-				game.diff = 1;
+				game.difficulty = 1;
 
 				AudioPlayer.getSound("menu_sound").play();
 			}
@@ -145,7 +145,7 @@ public class Menu extends MouseAdapter
 
 			g.setFont(fnt);
 			g.setColor(Color.white);
-			g.drawString("Wave", 240, 70);
+			g.drawString("Dodger", 220, 70);
 
 			g.setFont(fnt2);
 			g.drawRect(210, 150, 200, 64);
@@ -165,7 +165,7 @@ public class Menu extends MouseAdapter
 
 			g.setFont(fnt);
 			g.setColor(Color.white);
-			g.drawString("Menu", 240, 70);
+			g.drawString("Help", 240, 70);
 
 			g.setFont(fnt3);
 			g.drawString("Use WASD keys to move player and dodge enemies", 60, 200);
@@ -198,7 +198,7 @@ public class Menu extends MouseAdapter
 
 			g.setFont(fnt);
 			g.setColor(Color.white);
-			g.drawString("SELECT DIFFICULTY", 140, 70);
+			g.drawString("Select Difficulty", 70, 70);
 
 			g.setFont(fnt2);
 			g.drawRect(210, 150, 200, 64);

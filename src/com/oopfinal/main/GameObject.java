@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- * everything in the game
+ * everything component in the game
  */
 public abstract class GameObject
 {

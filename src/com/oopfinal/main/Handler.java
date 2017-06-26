@@ -7,13 +7,17 @@ import java.util.LinkedList;
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 /**
- * maintain, update and render all objects
+ * This class maintain, update and render all objects
  */
 public class Handler
 {
 
 	ArrayList<GameObject> object = new ArrayList<GameObject>();
-
+	
+	/**
+	 * The update state method
+	 * 
+	 */
 	public void tick()
 	{
 		for (int i = 0; i < object.size(); i++)
@@ -24,7 +28,10 @@ public class Handler
 			tempObject.tick();
 		}
 	}
-
+	/**
+	 * The renderer method
+	 * @param g The Graphic object to draw
+	 */
 	public void render(Graphics g)
 	{
 		for (int i = 0; i < object.size(); i++)
@@ -35,7 +42,9 @@ public class Handler
 			tempObject.render(g);
 		}
 	}
-
+	/**
+	 *  Clear all enemy except Player
+	 */
 	public void clearEnemys()
 	{
 		for (int i = 0; i < object.size(); i++)
@@ -50,12 +59,18 @@ public class Handler
 			}
 		}
 	}
-
+	/**
+	 * The insert object method
+	 * @param object The object want to put into the handler
+	 */
 	public void addObject(GameObject object)
 	{
 		this.object.add(object);
 	}
-
+	/**
+	 * The remove object method
+	 * @param object The object want to remove into the handler
+	 */
 	public void removeObject(GameObject object)
 	{
 		this.object.remove(object);
